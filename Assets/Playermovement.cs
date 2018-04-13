@@ -7,7 +7,7 @@ public class Playermovement : MonoBehaviour {
 	public KeyCode rightKey = KeyCode.RightArrow;
 	public KeyCode leftKey = KeyCode.LeftArrow;
 
-	public float moveSpeed = 1f;
+	public float moveSpeed = 5f;
 
 	// Use this for initialization
 	void Start () {
@@ -19,10 +19,10 @@ public class Playermovement : MonoBehaviour {
 	void Update () {
 
 		if (Input.GetKey(rightKey)) {
-			transform.Translate (moveSpeed, 0, 0);
+			transform.Translate (moveSpeed * Time.deltaTime, 0, 0);
 		}
 		if (Input.GetKey(leftKey)) {
-			transform.Translate (-moveSpeed, 0, 0);
+			transform.Translate (-moveSpeed * Time.deltaTime, 0, 0);
 		}
 
 	}
